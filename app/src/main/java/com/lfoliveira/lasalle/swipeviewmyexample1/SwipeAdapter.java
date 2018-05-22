@@ -15,14 +15,13 @@ public class SwipeAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        Fragment fragment = new NumberFragment();
 
-        Bundle args = new Bundle();
-        args.putInt("number", position + 1);
-        fragment.setArguments(args);
-
-        return  fragment;
-
+        if (position == 0){
+            return new RedFragment();
+        } else if (position == 1){
+            return new BlueFragment();
+        }
+        return new GreenFragment();
 
     }
 
